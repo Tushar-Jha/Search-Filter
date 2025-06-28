@@ -1,0 +1,30 @@
+<div>
+    <app-search-filter
+        [filterColumns]="columns()"
+        (changeFilters)="changeFiltersHandler($event)"
+    ></app-search-filter>
+
+    <div class="table-wrapper"> 
+        <table>
+            <thead>
+                <tr>
+                    @for (col of columns(); track $index) {
+                        <th>{{col.label}}</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (row of filteredRecords(); track $index) {
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.email}}</td>
+                        <td>{{row.age}}</td>
+                        <td>{{row.city}}</td>
+                        <td>{{row.company}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

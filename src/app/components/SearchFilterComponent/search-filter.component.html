@@ -1,0 +1,24 @@
+<div class="search-wrapper"> 
+    <div contenteditable="true" type="text" class="search-filter-input" #searchInput
+    (beforeinput)="beforeInputHandler($event)"
+    (input)="inputHandler($event)"
+    (keydown)="keyDownHandler($event)"
+    ></div>
+    @if(!searchInputElement()?.nativeElement?.innerHTML?.length) {
+        <span class="placeholder-text">Enter &#64; to add filters...</span>
+    }
+    @if(showColumnPicker()) {
+        <div class="column-picker">
+            @for (column of availableFilters(); track $index) {
+                <div class="column-picker-option" [class.highlighted]="$index === columnPickerSelectedIndex()">{{column.label}}</div>
+            }
+        </div>
+        @if(columnPickerSelectedIndexFinalised()) {
+            <div class="filter-input">
+                <input type="text" #filterInput
+                placeholder="Enter search text here..."
+                (change)="filterInputChangeHandler($event)"/>
+            </div>
+        }
+    }
+</div>

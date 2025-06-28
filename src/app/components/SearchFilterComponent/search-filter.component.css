@@ -1,0 +1,46 @@
+.search-wrapper {
+    position: relative;
+}
+
+.search-filter-input {
+    border: 2px solid black;
+    padding: 10px 6px;
+}
+
+.column-picker {
+    position: absolute;
+    border: 1px solid;
+    background-color: white;
+    width: 80px;
+}
+
+.column-picker-option {
+    padding: 2px;
+}
+
+.highlighted {
+    background-color: beige;
+}
+
+.filter-input {
+    position: absolute;
+    background-color: white;
+    left: 80px;
+}
+
+::ng-deep .added-filter {
+    text-decoration: none;
+    background-color: beige;
+    border: 1px solid black;
+    color: black;
+    padding: 0px 2px;
+    margin: 0 4px;
+}
+
+.placeholder-text {
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+}
